@@ -1,0 +1,15 @@
+{
+  "name": "chat-example",
+  "version": "0.0.0",
+  "description": "a quick learning of get and post requests to be used as a future reference!  might add some more functionality if it feels appropriate.",
+  "main": "server.js",
+  "repository": "https://github.com/blarmon/node-get-post",
+  "author": "Chris Siegel <c.siegel1991@gmail.com>",
+  "dependencies": {
+    "async": "~0.2.8",
+    "body-parser": "^1.15.2",
+    "express": "~3.2.4",
+    "express-handlebars": "^3.0.0",
+    "socket.io": "~0.9.14"
+  }
+}

@@ -1,0 +1,21 @@
+<h1>  {{ title }} </h1>
+<h1>Home Page</h1> 
+<form action="/test/submit" method="post"> 
+    <input type="text" name="id"> 
+    <button type="submit">Submit</button> 
+</form>
+<br>
+<div class="test">
+    {{# if myCondition }}
+        4 tru
+    {{ else }}
+        less true
+    {{/if}}
+    
+    <br>
+    
+    {{# each myArray as |val key|}}
+        key: {{ key }}
+        value: {{ val }}
+    {{/each}}
+</div>
