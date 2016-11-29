@@ -22,6 +22,11 @@ app.get('/', function(req, res, next) {
   req.session.errors = null;
 });
 
+app.get('/:email/:password', function(req, res, next) {
+  res.render('index', { title: 'Form Validation', success: req.session.success, errors: req.session.errors, email: req.params.email, password: req.params.password });
+  req.session.errors = null;
+});
+
 app.post('/submit', function(req, res, next) {
   req.check('email', 'Invalid email address').isEmail();
   req.check('password', 'Password is invalid').isLength({min: 4}).equals(req.body.confirmPassword);
@@ -33,7 +38,9 @@ app.post('/submit', function(req, res, next) {
   } else {
     req.session.success = true;
   }
-  res.redirect('/');
+  var email = req.body.email;
+  var password = req.body.password;
+  res.redirect('/' + email + '/' + password);
 });
 
 
